@@ -1,0 +1,33 @@
+@function rem($px) {
+    @if type-of($px) != number {
+      @error "rem() принимает только число (px без единиц)";
+    }
+  
+    @return ($px / 16) * 1rem;
+  }
+  
+  @function fluid-text(
+    $min-px,
+    $max-px,
+    $min-vw: 360,
+    $max-vw: 1280
+  ) {
+    @if type-of($min-px) != number or type-of($max-px) != number {
+      @error "fluid-text() принимает только числа (px без единиц)";
+    }
+  
+    $min-rem: $min-px / 16;
+    $max-rem: $max-px / 16;
+  
+    $min-width-rem: $min-vw / 16;
+    $max-width-rem: $max-vw / 16;
+  
+    $slope: ($max-rem - $min-rem) / ($max-width-rem - $min-width-rem);
+    $y-axis: -$min-width-rem * $slope + $min-rem;
+  
+    @return clamp(
+      #{$min-rem}rem,
+      #{$y-axis}rem + #{($slope * 100)}vw,
+      #{$max-rem}rem
+    );
+  }

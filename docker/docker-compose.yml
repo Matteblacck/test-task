@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  frontend:
+    container_name: test
+    build:
+      context: ..
+      dockerfile: docker/frontend.dev.Dockerfile
+    ports:
+      - "3400:3000"
+    volumes:
+      - ../frontend:/app
+      - /app/node_modules
+    env_file:
+      - ../frontend/.env.local
+    environment:
+      - NODE_ENV=development
+    command: npm run dev

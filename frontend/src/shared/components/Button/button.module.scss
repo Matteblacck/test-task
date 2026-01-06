@@ -1,0 +1,25 @@
+.button {
+    all: unset;
+    box-sizing: border-box;
+  
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    cursor: pointer;
+    user-select: none;
+  
+    font: inherit;
+    color: inherit;
+  
+    /* accessibility */
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+    }
+  
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }

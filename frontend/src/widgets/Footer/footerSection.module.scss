@@ -1,0 +1,150 @@
+@use "@/shared/styles/functions" as *;
+
+.footer {
+  background: #0b0b0d;
+  padding: rem(50) rem(18) rem(32);
+  color: #9a9a9a;
+  @media (max-width: 992px) {
+    margin-top: 10vh;
+  }
+}
+
+.container {
+  max-width: rem(1280);
+  margin: 0 auto;
+}
+
+/* ===== TOP ===== */
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: rem(32);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: rem(24);
+  }
+}
+
+/* ===== LOGO ===== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: rem(12);
+
+  span {
+    font-family: var(--font-inter);
+    font-size: rem(20);
+    font-weight: 600;
+    color: #fff;
+  }
+  @media (max-width: 576px) {
+    width: 100%;
+    justify-content: space-between;
+    
+  }
+}
+
+/* ===== NAV ===== */
+.nav {
+  display: flex;
+  font-family: var(--font-inter);
+  gap: rem(80);
+  font-weight: 500;
+
+  a {
+    font-family: var(--font-inter);
+    font-size: rem(16);
+    color: #b5b5b5;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  @media (max-width: 992px) {
+    flex-wrap: wrap;
+    gap: rem(20);
+  }
+  @media (max-width: 576px) {
+    flex-direction: column;
+    text-transform: uppercase;
+    a {
+    
+      font-size: rem(14);
+    }
+  }
+}
+
+/* ===== DIVIDER ===== */
+.divider {
+  margin: rem(32) 0;
+  height: 1px;
+  background: #818181;
+}
+
+/* ===== BOTTOM ===== */
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: rem(20);
+    align-items: flex-start;
+  }
+}
+
+.copy {
+  font-family: var(--font-inter);
+  font-size: rem(14);
+  color: #8c8c8c;
+}
+
+/* ===== SOCIALS ===== */
+.socials {
+  display: flex;
+  gap: rem(24);
+  
+
+  a {
+    font-size: rem(18);
+    color: #8c8c8c;
+    transition: color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      color: #fff;
+      transform: translateY(-2px);
+    }
+  }
+  @media (max-width: 576px) {
+    display: none;
+  }
+}
+.socials2 {
+  display: none;
+  
+  
+  @media (max-width: 576px) {
+    display: flex;
+    align-items: center;
+    gap: rem(8);
+  
+
+  a {
+    font-size: rem(18);
+    color: #8c8c8c;
+    transition: color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      color: #fff;
+      transform: translateY(-2px);
+    }
+  }
+  }
+}
